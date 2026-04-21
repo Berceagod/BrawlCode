@@ -1,0 +1,22 @@
+Tipuri de obiecte:
+- User (clasa abastracta de baza
+- RegularUser - mosteneste User, e utilizator normal
+- Admin - mosteneste User, e administrator
+- PremiumUser - mosteneste User, are cont "premium" - platit
+- Problem - reprezinta o problema pe platforma , clasa abstracta.
+- AlgoProblem - problema de algoritmica, mosteneste Problem, include limite de timp si memorie
+- DataBaseProblem - problema de baza de date, mosteneste Problem, include un model de baza de date
+- Match - reprezinta un meci dintre 2 jucatori
+- Submission - reprezinta o incercare a unui utilizator sa rezolve o problema.
+
+Lista interogari:
+- Adaugarea unui utilizator nou pe platforma
+- Adaugarea unei probleme noi in baza de date
+- Stergerea unei probleme din baza de date/ unui utilizator
+- Obtinerea clasamentului global
+- CRearea unui meci intre 2 jucatori
+- Filtrarea unor probleme de practice dupa categorie/ tip
+- Trimiterea unei solutii in cadrul unui meci
+- Obtinerea istoricului de meciuri
+- Finalizarea unui meci si actualizarea de elo (rating)
+- Afisarea tuturor meciurilor active in platforma (pt admin)
