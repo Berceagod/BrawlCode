@@ -1,4 +1,4 @@
-package Users;
+package users;
 
 public class PremiumUser extends RegularUser {
     private String premiumBadge;

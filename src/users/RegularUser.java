@@ -1,4 +1,4 @@
-package Users;
+package users;
 
 public class RegularUser extends User implements Comparable<RegularUser> {
     protected int eloRating;
