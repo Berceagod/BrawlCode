@@ -92,6 +92,7 @@ public class Main {
             System.out.println("3. Add Premium User");
             System.out.println("4. Add Admin");
             System.out.println("5. Find User by ID");
+            System.out.println("6. Delete User");
             System.out.println("0. Back");
             System.out.print("Choice: ");
             String choice = scanner.nextLine().trim();
@@ -135,6 +136,16 @@ public class Main {
                         System.out.println(u != null ? "\n" + u : "[Error] Not found.");
                         pressEnterToContinue();
                         break;
+                    case "6":
+                        System.out.print("Enter User ID to DELETE: ");
+                        int delId = Integer.parseInt(scanner.nextLine().trim());
+                        System.out.print("Are you sure? (y/n): ");
+                        if (scanner.nextLine().trim().equalsIgnoreCase("y")) {
+                            boolean delSuccess = service.deleteUser(delId);
+                            System.out.println(delSuccess ? "[Success] User deleted." : "[Error] User not found.");
+                        }
+                        pressEnterToContinue();
+                        break;
                     default:
                         System.out.println("[Error] Invalid option.");
                 }
@@ -153,6 +164,7 @@ public class Main {
             System.out.println("2. Detailed Problem List (IDs & Categories)");
             System.out.println("3. Filter by Difficulty");
             System.out.println("4. View Full Problem Description (by ID)");
+            System.out.println("5. Delete Problem");
             System.out.println("0. Back");
             System.out.print("Choice: ");
             String choice = scanner.nextLine().trim();
@@ -178,6 +190,20 @@ public class Main {
                         System.out.print("Problem ID: ");
                         int pid = Integer.parseInt(scanner.nextLine().trim());
                         service.displayProblem(pid);
+                    } catch (Exception e) {
+                        System.out.println("[Error] Invalid ID.");
+                    }
+                    pressEnterToContinue();
+                    break;
+                case "5":
+                    try {
+                        System.out.print("Enter Problem ID to DELETE: ");
+                        int delPid = Integer.parseInt(scanner.nextLine().trim());
+                        System.out.print("Are you sure? (y/n): ");
+                        if (scanner.nextLine().trim().equalsIgnoreCase("y")) {
+                            boolean delPSuccess = service.deleteProblem(delPid);
+                            System.out.println(delPSuccess ? "[Success] Problem deleted." : "[Error] Problem not found.");
+                        }
                     } catch (Exception e) {
                         System.out.println("[Error] Invalid ID.");
                     }

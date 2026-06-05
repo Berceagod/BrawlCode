@@ -87,6 +87,31 @@ public class PlatformService {
         return false;
     }
 
+    public boolean deleteUser(int id) {
+        AuditService.getInstance().logAction("deleteUser");
+        User user = findUserById(id);
+        if (user != null) {
+            allUsers.remove(user);
+            if (user instanceof RegularUser) {
+                leaderboard.remove((RegularUser) user);
+            }
+            UserRepository.getInstance().delete(id);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean deleteProblem(int id) {
+        AuditService.getInstance().logAction("deleteProblem");
+        Problem problem = findProblemById(id);
+        if (problem != null) {
+            problemsList.remove(problem);
+            ProblemRepository.getInstance().delete(id);
+            return true;
+        }
+        return false;
+    }
+
     public void displayLeaderboard() {
         AuditService.getInstance().logAction("displayLeaderboard");
         System.out.println("\n=== LEADERBOARD (Top Players) ===");
