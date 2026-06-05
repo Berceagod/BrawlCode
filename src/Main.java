@@ -4,15 +4,10 @@ import users.PremiumUser;
 import users.RegularUser;
 import users.User;
 import problems.Problem;
-import problems.AlgorithmicProblem;
-import problems.DatabaseProblem;
 import matches.Match;
 
 import java.util.Scanner;
 
-/**
- * Enhanced Professional CLI for BrawlCode Platform.
- */
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
     private static PlatformService service;
