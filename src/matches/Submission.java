@@ -14,6 +14,8 @@ public class Submission {
         this.isCorrect = isCorrect;
     }
 
+    public int getSubmissionId() { return submissionId; }
+    public String getCodeSnippet() { return codeSnippet; }
     public boolean isCorrect() { return isCorrect; }
     public RegularUser getUser() { return user; }
 }

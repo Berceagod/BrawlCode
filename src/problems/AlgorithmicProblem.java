@@ -8,6 +8,10 @@ public class AlgorithmicProblem extends Problem {
         this.timeLimit = timeLimit;
     }
 
+    public double getTimeLimit() {
+        return timeLimit;
+    }
+
     @Override
     public String getProblemDetails() {
         return "Algorithmic Problem: " + title + " (" + difficulty + ") - Time Limit: " + timeLimit + "s";

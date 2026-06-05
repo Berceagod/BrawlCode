@@ -8,6 +8,10 @@ public class DatabaseProblem extends Problem {
         this.schemaName = schemaName;
     }
 
+    public String getSchemaName() {
+        return schemaName;
+    }
+
     @Override
     public String getProblemDetails() {
         return "SQL: " + title + " (" + difficulty + ") - Schema: " + schemaName;

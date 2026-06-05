@@ -13,7 +13,11 @@ public class RegularUser extends User implements Comparable<RegularUser> {
 
     @Override
     public int compareTo(RegularUser other) {
-        return Integer.compare(other.eloRating, this.eloRating);
+        int eloCompare = Integer.compare(other.eloRating, this.eloRating);
+        if (eloCompare == 0) {
+            return Integer.compare(this.id, other.id);
+        }
+        return eloCompare;
     }
 
     @Override
